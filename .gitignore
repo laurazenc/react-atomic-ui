@@ -3,3 +3,8 @@ dist/cjs/*
 dist/umd/*
 dist/package-lock.json
 dist/README.md
+
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
