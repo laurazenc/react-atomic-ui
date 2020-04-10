@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "rootDir": "./src",
+        "esModuleInterop": true,
+        "isolatedModules": true,
+        "target": "esnext",
+        "module": "commonjs",
+        "strict": true,
+        "jsx": "react",
+        "lib": ["dom", "es2015"],
+        "resolveJsonModule": true,
+        "baseUrl": "."
+    },
+    "exclude": [
+        "landing",
+        "dist",
+        "node_modules"
+    ]
+}
