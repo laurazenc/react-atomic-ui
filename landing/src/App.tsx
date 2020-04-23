@@ -1,7 +1,10 @@
 import React from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
-import theme from './theme'
+import Header from './components/Header'
+
+import { theme } from '@react-layouts'
+
 
 const GlobalStyle = createGlobalStyle`
 
@@ -27,7 +30,7 @@ function App() {
   return (
     <ThemeProvider {...{theme}}>
       <div className="App">
-        react-layouts
+        <Header/>
       </div>
       <GlobalStyle />
     </ThemeProvider>
