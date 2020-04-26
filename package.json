@@ -1,7 +1,7 @@
 {
-  "name": "react-layouts",
+  "name": "react-atomic",
   "version": "0.0.1",
-  "description": "Layouts and components using style-components",
+  "description": "Component library based on atomic design principles using styled-components",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "engines": {
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/laurazenc/react-layouts.git"
+    "url": "git+https://github.com/laurazenc/react-atomic.git"
   },
   "keywords": [
     "react",
@@ -27,9 +27,9 @@
   "author": "laurazenc",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/laurazenc/react-layouts/issues"
+    "url": "https://github.com/laurazenc/react-atomic/issues"
   },
-  "homepage": "https://github.com/laurazenc/react-layouts#readme",
+  "homepage": "https://github.com/laurazenc/react-atomic#readme",
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

@@ -15,7 +15,7 @@ export interface ColorProps {
 
 const colors: ColorProps = {
     primary: "#28D6D6",
-    secondary: "7673F6",
+    secondary: "#7673F6",
     error: "#FF6857",
     warning: "#F7BA15",
     info: "#8581D9",
