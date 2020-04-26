@@ -1,18 +1,21 @@
 {
     "compilerOptions": {
-        "rootDir": "./src",
-        "esModuleInterop": true,
-        "isolatedModules": true,
-        "target": "esnext",
-        "module": "commonjs",
-        "strict": true,
+        "declaration": true,
+        "declarationDir": "dist",
+        "module": "esnext",
+        "target": "es5",
+        "lib": ["es6", "dom", "es2015", "es2016", "es2017"],
+        "sourceMap": true,
         "jsx": "react",
-        "lib": ["dom", "es2015"],
-        "resolveJsonModule": true,
-        "baseUrl": "."
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "outDir": "./dist",
+        "strict": true
     },
+    "include": ["src/**/*"],
     "exclude": [
-        "landing",
+        "docs",
         "dist",
         "node_modules"
     ]
