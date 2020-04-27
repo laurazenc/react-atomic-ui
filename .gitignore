@@ -1,8 +1,5 @@
 node_modules
-dist/cjs/*
-dist/umd/*
-dist/package-lock.json
-dist/README.md
+dist
 
 
 npm-debug.log*

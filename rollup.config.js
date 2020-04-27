@@ -1,47 +1,34 @@
-import { terser } from 'rollup-plugin-terser';
-import typescript from '@rollup/plugin-typescript';
-
-const input = './src/index.ts';
-
+import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import resolve from '@rollup/plugin-node-resolve';
+import typescript from 'rollup-plugin-typescript2';
+import commonjs from '@rollup/plugin-commonjs';
+import del from 'rollup-plugin-delete'
 
 import pkg from './package.json'
 
 
 export default {
-    input,
+    input: "src/index.ts",
     output: [
       {
         file: pkg.main,
-        format: 'cjs',
-        sourcemap: true,
-        globals: {
-            'styled-components': 'syled-components',
-            react: 'React',
-            'react-dom': 'ReactDOM',
-        },
+        format: "cjs"
       },
       {
         file: pkg.module,
-        format: 'es',
-        sourcemap: true,
-        globals: {
-            'styled-components': 'syled-components',
-            react: 'React',
-            'react-dom': 'ReactDOM',
-        },
+        format: "esm"
+      },
+      {
+        file: 'site/src/react-atomic/index.js',
+        format: 'esm',
+        banner: '/* eslint-disable */'
       }
     ],
-    external: ['react', 'react-dom', 'styled-components'],
     plugins: [
-        typescript({
-            removeComments: true,
-            module: 'es6',
-            target: 'es5',
-            jsx: 'react',
-            allowSyntheticDefaultImports: true,
-            resolveJsonModule: true,
-            moduleResolution: 'node',
-        }),
-        terser(),
+      del({ targets: ['dist/*', 'site/src/react-atomic'] }),
+      peerDepsExternal(),
+      resolve(),
+      commonjs(),
+      typescript({ useTsconfigDeclarationDir: true }),
     ]
   }

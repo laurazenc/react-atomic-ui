@@ -1,11 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import { ThemeProvider } from 'styled-components';
+import {
+  BrowserRouter as Router,
+} from "react-router-dom";
+import Routes from './routes';
 import * as serviceWorker from './serviceWorker';
+
+
+import { theme } from './react-atomic'
+import { Header, Footer } from './components'
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <>
+      <Header />
+        <Router>
+          <Routes />
+        </Router>
+      <Footer />
+      </>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

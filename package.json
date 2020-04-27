@@ -1,23 +1,25 @@
 {
-  "name": "react-layouts",
+  "name": "react-atomic",
   "version": "0.0.1",
-  "description": "Layouts and components using style-components",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "description": "Component library based on atomic design principles using styled-components",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
   },
   "scripts": {
-    "copy": "rm -rf dist/cjs/* && rm -rf dist/umd/* && cp README.md dist",
     "build": "rollup -c",
     "rollup": "rollup -c -w",
     "lint": "eslint src/**/*.ts src/**/*.tsx",
-    "typecheck": "tsc --noEmit --watch"
+    "typecheck": "tsc --noEmit --watch",
+    "site": "cd site && yarn start",
+    "i-all": "yarn && cd site && yarn",
+    "dev": "npm-run-all --parallel rollup site"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/laurazenc/react-layouts.git"
+    "url": "git+https://github.com/laurazenc/react-atomic.git"
   },
   "keywords": [
     "react",
@@ -27,31 +29,14 @@
   "author": "laurazenc",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/laurazenc/react-layouts/issues"
+    "url": "https://github.com/laurazenc/react-atomic/issues"
   },
-  "homepage": "https://github.com/laurazenc/react-layouts#readme",
-  "dependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
+  "homepage": "https://github.com/laurazenc/react-atomic#readme",
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "styled-components": "^5.1.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "@babel/preset-react": "^7.7.4",
-    "@rollup/plugin-json": "^4.0.1",
-    "@rollup/plugin-typescript": "^4.0.0",
-    "@types/react": "^16.9.19",
-    "@types/react-dom": "^16.9.5",
-    "@types/styled-components": "^5.0.1",
-    "@typescript-eslint/eslint-plugin": "^2.22.0",
-    "@typescript-eslint/parser": "^2.22.0",
-    "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.19.0",
-    "rimraf": "^3.0.0",
-    "rollup": "^1.30.1",
-    "rollup-plugin-terser": "^5.2.0",
-    "typescript": "^3.7.5"
   },
   "files": [
     "dist"
@@ -60,5 +45,25 @@
     "setupFiles": [
       "<rootDir>/setupFile.js"
     ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "@types/styled-components": "^5.1.0",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.19.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.0.5",
+    "rollup": "^2.7.2",
+    "rollup-plugin-delete": "^1.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.2",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "typescript": "^3.8.3"
   }
 }
