@@ -12,17 +12,20 @@ export default {
     output: [
       {
         file: pkg.main,
-        format: "cjs",
-        sourcemap: true
+        format: "cjs"
       },
       {
         file: pkg.module,
-        format: "esm",
-        sourcemap: true
+        format: "esm"
+      },
+      {
+        file: 'site/src/react-atomic/index.js',
+        format: 'esm',
+        banner: '/* eslint-disable */'
       }
     ],
     plugins: [
-      del({ targets: ['dist/*'] }),
+      del({ targets: ['dist/*', 'site/src/react-atomic'] }),
       peerDepsExternal(),
       resolve(),
       commonjs(),
