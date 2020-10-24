@@ -1,0 +1,38 @@
+{
+  "name": "react-atomic-ui",
+  "version": "1.0.0",
+  "description": "Simple component library to build React applications ",
+  "main": "index.js",
+  "repository": "https://github.com/laurazenc/react-atomic-ui.git",
+  "author": "Laura <laurazenc@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start:core": "yarn workspace @react-atomic-ui/core"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.53",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "concurrently": "^5.3.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.12.0",
+    "eslint-config-prettier": "^6.14.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^26.6.1",
+    "lerna": "^3.22.1",
+    "nodemon": "^2.0.6",
+    "react": "^17.0.1"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "site"
+    ]
+  },
+  "dependencies": {
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
+  }
+}

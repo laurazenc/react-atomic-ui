@@ -1,0 +1,36 @@
+{
+  "name": "@react-atomic-ui/core",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Laura <laurazenc@gmail.com>",
+  "homepage": "https://github.com/laurazenc/react-atomic-ui#readme",
+  "license": "ISC",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laurazenc/react-atomic-ui.git"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "start": "nodemon --watch src --exec yarn build -e ts,tsx",
+    "build": "concurrently yarn:build:*",
+    "build:esm": "tsc --module es2015 --target es5 --outDir dist/esm",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
+    "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
+    "test": "jest",
+    "test:cov": "yarn test --coverage",
+    "lint": "eslint src --ext .ts,.tsx --config ../../.eslintrc"
+  },
+  "bugs": {
+    "url": "https://github.com/laurazenc/react-atomic-ui/issues"
+  },
+  "peerDependencies": {
+    "react": "16.x"
+  }
+}
