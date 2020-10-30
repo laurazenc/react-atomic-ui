@@ -1,27 +1,32 @@
-import React from 'react'
+import React from "react"
 
 interface PageProps {
-    frontmatter: unknown,
-    children: React.ReactNode,
-    sidebar?: React.ReactNode,
-    pagination?: unknown
+  frontmatter: { [key: string]: unknown }
+  children: React.ReactNode
+  sidebar?: React.ReactNode
+  pagination?: unknown
 }
 
 const Page: React.FC<PageProps> = ({
-    children,
-    sidebar,
-    pagination,
-  }: PageProps) => {
-      return (
-          <>
-                {sidebar || null}
-                <div style={{ flex: 1 }}>
-                    {children}
-                    {pagination || null}
-                </div>
-          </>
-      )
+  frontmatter,
+  children,
+  sidebar,
+  pagination,
+}: PageProps) => {
+  const { title } = frontmatter
+  return (
+    <>
+      <div>the header</div>
+      <div style={{ display: "flex" }}>
+        {sidebar || null}
+        <div style={{ flex: 1 }}>
+          <h1>{title}</h1>
+          {children}
+          {pagination || null}
+        </div>
+      </div>
+    </>
+  )
+}
 
-  }
-
-  export default Page
+export default Page
