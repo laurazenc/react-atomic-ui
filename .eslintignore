@@ -1,8 +1,12 @@
 node_modules
 dist
 
+packages/node_modules
 packages/*/node_modules
 packages/*/dist
+packages/template
+!.packages/template
+.packages/template/*
 
 site/*/node_modules
 site/*/dist
