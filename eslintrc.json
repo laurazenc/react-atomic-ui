@@ -1,0 +1,59 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "no-param-reassign": "off",
+    "no-console": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "react/forbid-prop-types": "off",
+    "import/prefer-default-export": "off",
+    "no-underscore-dangle": "off",
+    "no-shadow": "off",
+    "spaced-comment": "off",
+    "guard-for-in": "off",
+    "react/no-danger": "off",
+    "react/button-has-type": "off",
+    "react/no-unescaped-entities": "off",
+    "operator-assignment": "off",
+    "prefer-destructuring": "off",
+    "react/state-in-constructor": "off",
+    "no-restricted-syntax": "off",
+    "no-continue": "off",
+    "react/destructuring-assignment": "off",
+    "@typescript-eslint/dot-notation": "off",
+    "no-bitwise": "off",
+    "no-redeclare": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/lines-between-class-members": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [
+          ".js",
+          ".tsx"
+        ]
+      }
+    ],
+    "react/jsx-props-no-spreading": "off",
+    "react/no-array-index-key": "off",
+    "react/require-default-props": "off",
+    "react/sort-prop-types": "error",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-shadow": "off"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@react-atomic-ui/site",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest",
+    "lint": "concurrently yarn:lint:*",
+    "lint:src": "eslint src --ext .ts,.tsx",
+    "lint:types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mdx-js/react": "^1.6.19",
+    "@next/mdx": "^9.5.5",
+    "next": "9.5.5",
+    "next-mdx-enhanced": "^4.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "remark": "^13.0.0"
+  },
+  "devDependencies": {
+    "next-compose-plugins": "^2.2.0"
+  }
+}
