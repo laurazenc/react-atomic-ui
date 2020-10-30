@@ -11,7 +11,8 @@
     "start": "lerna run --parallel --scope '@react-atomic-ui/*' --npm-client=yarn dev",
     "lint": "lerna run lint --parallel --npm-client=yarn",
     "lint:types": "lerna exec --parallel \"tsc --noEmit\"",
-    "clean": "lerna clean --yes && rm -rf node_modules"
+    "clean": "lerna clean --yes && rm -rf node_modules",
+    "test": "lerna run tset --parallel --npm-client=yarn"
   },
   "devDependencies": {
     "@types/react": "^16.9.53",
