@@ -1,7 +1,1 @@
-const Core = "wadus"
-
-export { Core
-
-
-
-}
+export * from "./provider"

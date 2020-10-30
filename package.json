@@ -11,29 +11,34 @@
     "start": "lerna run --parallel --scope '@react-atomic-ui/*' --npm-client=yarn dev",
     "lint": "lerna run lint --parallel --npm-client=yarn",
     "lint:types": "lerna exec --parallel \"tsc --noEmit\"",
-    "clean": "lerna clean --yes && rm -rf node_modules"
+    "clean": "lerna clean --yes && rm -rf node_modules",
+    "test": "lerna run test --parallel --npm-client=yarn",
+    "test:cov": "lerna run test:cov"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/react": "^11.1.0",
     "@types/react": "^16.9.53",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.2",
     "eslint": "^7.11.0",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint-config-airbnb-typescript": "^12.0.0",
     "eslint-config-prettier": "^6.14.0",
     "eslint-config-react": "^1.1.7",
-    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^3.9.2",
-    "prettier": "^2.1.2",
     "jest": "^26.6.1",
     "lerna": "^3.22.1",
     "nodemon": "^2.0.6",
-    "react": "^17.0.1"
+    "prettier": "^2.1.2",
+    "react": "^17.0.1",
+    "ts-jest": "^26.4.3"
   },
   "workspaces": {
     "packages": [
