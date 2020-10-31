@@ -7,8 +7,9 @@
     "build": "next build",
     "clean": "rimraf coverage",
     "start": "next start",
-    "test": "jest --passWithNoTests",
-    "test:cov": "yarn clean && jest --passWithNoTests --coverage",
+    "test": "jest --env=jsdom --passWithNoTests",
+    "test:ci": "yarn test --watchAll --coverage",
+    "test:cov": "yarn clean && yarn test --coverage",
     "lint": "concurrently yarn:lint:*",
     "lint:src": "eslint src --ext .ts,.tsx",
     "lint:types": "tsc --noEmit"
@@ -16,6 +17,7 @@
   "dependencies": {
     "@mdx-js/react": "^1.6.19",
     "@next/mdx": "^9.5.5",
+    "@react-atomic-ui/core": "^1.0.0",
     "next": "9.5.5",
     "next-mdx-enhanced": "^4.0.0",
     "react": "17.0.1",

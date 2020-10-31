@@ -13,6 +13,7 @@
     "lint:types": "lerna exec --parallel \"tsc --noEmit\"",
     "clean": "lerna clean --yes && rm -rf node_modules",
     "test": "lerna run test --parallel --npm-client=yarn",
+    "test:ci": "lerna run test:ci --parallel --npm-client=yarn",
     "test:cov": "lerna run test:cov"
   },
   "devDependencies": {
