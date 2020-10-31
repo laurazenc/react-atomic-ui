@@ -1,5 +1,5 @@
 {
-  "name": "@react-atomic-ui/core",
+  "name": "@react-atomic-ui/utils",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Laura <laurazenc@gmail.com>",
@@ -24,8 +24,8 @@
     "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
     "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
     "clean": "rimraf coverage",
-    "test": "jest --env=jsdom --passWithNoTests",
-    "test:ci": "yarn clean && yarn test --watchAll --coverage",
+    "test": "jest --passWithNoTests --env=jsdom ",
+    "test:ci": "yarn test  --watchAll --coverage",
     "test:cov": "yarn clean && yarn test --coverage --ci --runInBand",
     "lint": "eslint src --ext .ts,.tsx --config ../../.eslintrc"
   },
@@ -34,8 +34,5 @@
   },
   "peerDependencies": {
     "react": "16.x"
-  },
-  "dependencies": {
-    "@react-atomic-ui/utils": "^1.0.0"
   }
 }

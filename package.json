@@ -8,11 +8,14 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "lerna run --parallel --scope '@react-atomic-ui/*' --npm-client=yarn dev",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "build": "lerna run build --ignore @chakra-ui/test-utils --no-private --stream",
+    "clean": "lerna clean --yes && rm -rf node_modules",
     "lint": "lerna run lint --parallel --npm-client=yarn",
     "lint:types": "lerna exec --parallel \"tsc --noEmit\"",
-    "clean": "lerna clean --yes && rm -rf node_modules",
+    "start": "lerna run --parallel --scope '@react-atomic-ui/*' --npm-client=yarn dev",
     "test": "lerna run test --parallel --npm-client=yarn",
+    "test:ci": "lerna run test:ci --parallel --npm-client=yarn",
     "test:cov": "lerna run test:cov"
   },
   "devDependencies": {

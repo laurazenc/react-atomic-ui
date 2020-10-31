@@ -27,7 +27,10 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn install && yarn bootstrap
+
+      - name: Build packages
+        run: yarn build
 
       - name: Run test:cov
         run: yarn test:cov
