@@ -14,10 +14,10 @@
     "lint": "lerna run lint --no-private --stream",
     "lint:types": "lerna exec --parallel \"tsc --noEmit\"",
     "site": "yarn workspace @react-atomic-ui/site",
-    "start": "lerna run dev --ignore @react-atomic-ui/template --parallel",
+    "start": "lerna run dev --parallel",
     "test": "lerna run test --no-private --stream",
-    "test:ci": "lerna run test:ci --no-private --stream",
-    "test:cov": "lerna run test:cov"
+    "test:ci": "lerna run test:ci --no-private --stream  --ignore @react-atomic-ui/site",
+    "test:cov": "lerna run test:cov  --ignore @react-atomic-ui/site"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.5",
