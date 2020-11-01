@@ -5,5 +5,10 @@
     "site"
   ],
   "npmClient": "yarn",
-  "version": "0.0.0"
+  "version": "0.0.0",
+  "command": {
+    "bootstrap": {
+      "ignore": "@react-atomic-ui/template"
+    }
+  }
 }
