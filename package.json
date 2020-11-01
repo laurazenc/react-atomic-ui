@@ -9,14 +9,15 @@
   "private": true,
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "build": "lerna run build --ignore @chakra-ui/test-utils --no-private --stream",
+    "build": "lerna run build --ignore @react-atomic-ui/template --no-private --stream",
     "clean": "lerna clean --yes && rm -rf node_modules",
-    "lint": "lerna run lint --parallel --npm-client=yarn",
+    "lint": "lerna run lint --no-private --stream",
     "lint:types": "lerna exec --parallel \"tsc --noEmit\"",
-    "start": "lerna run --parallel --scope '@react-atomic-ui/*' --npm-client=yarn dev",
-    "test": "lerna run test --parallel --npm-client=yarn",
-    "test:ci": "lerna run test:ci --parallel --npm-client=yarn",
-    "test:cov": "lerna run test:cov"
+    "site": "yarn workspace @react-atomic-ui/site",
+    "start": "lerna run dev --parallel",
+    "test": "lerna run test --no-private --stream",
+    "test:ci": "lerna run test:ci --no-private --stream  --ignore @react-atomic-ui/site",
+    "test:cov": "lerna run test:cov  --ignore @react-atomic-ui/site"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.5",
