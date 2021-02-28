@@ -1,14 +1,17 @@
 {
   "useWorkspaces": true,
-  "packages": [
-    "packages/*",
-    "site"
-  ],
+  "packages": ["packages/*", "site"],
   "npmClient": "yarn",
-  "version": "0.0.0",
   "command": {
+    "version": { "exact": true },
     "bootstrap": {
       "ignore": "@react-atomic-ui/template"
+    },
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore(release): publish",
+      "ignoreChanges": ["**/stories/**", "**/tests/**"],
+      "allowBranch": "master"
     }
   }
 }
