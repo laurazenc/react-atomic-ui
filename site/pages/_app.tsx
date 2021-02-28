@@ -1,5 +1,4 @@
 import Head from "next/head"
-import Router from "next/router"
 import React from "react"
 import { RauiProvider } from "@react-atomic-ui/core"
 

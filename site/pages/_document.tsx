@@ -17,11 +17,8 @@ class Document extends NextDocument {
       <Html lang="en">
         <Head>
           <link
-            rel="preload"
-            href="/fonts/Inter.woff2"
-            as="font"
-            type="font/woff2"
-            crossOrigin="anonymous"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
           />
         </Head>
         <body>

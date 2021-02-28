@@ -7,7 +7,7 @@ interface RauiProviderProps {
   children?: React.ReactNode
 }
 
-const ThemeContext = React.createContext<Record<string, unknown>>({})
+export const ThemeContext = React.createContext<Record<string, unknown>>({})
 
 export interface ThemeProviderProps {
   theme: Dict
@@ -30,10 +30,4 @@ export const RauiProvider = ({
   theme = defaultTheme,
 }: RauiProviderProps): React.ReactElement => {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>
-}
-
-export function useTheme(): Dict {
-  const theme = React.useContext(ThemeContext) as Dict
-  const result = React.useMemo(() => theme, [theme])
-  return result
 }

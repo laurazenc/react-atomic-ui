@@ -1,6 +1,6 @@
 import React from "react"
 import { render } from "@testing-library/react"
-import { RauiProvider, useTheme } from "../src/Provider"
+import { RauiProvider } from "../src/Provider"
 describe("Provider", () => {
   it("should render component", () => {
     const { getByText } = render(
@@ -11,20 +11,13 @@ describe("Provider", () => {
 
     expect(getByText(/hello/)).toBeDefined()
   })
-})
-
-describe("useTheme", () => {
-  it("should return the theme object", () => {
-    const Comp = () => {
-      const theme = useTheme()
-      expect(typeof theme).toEqual("object")
-      return null
-    }
-
-    render(
-      <RauiProvider theme={{}}>
-        <Comp />
+  it("should fallback to defaultTheme", () => {
+    const { getByText } = render(
+      <RauiProvider>
+        <div>hello</div>
       </RauiProvider>,
     )
+
+    expect(getByText(/hello/)).toBeDefined()
   })
 })
