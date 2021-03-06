@@ -25,9 +25,9 @@
     "lint": "lerna run lint --no-private --stream",
     "lint:types": "lerna exec --parallel \"tsc --noEmit\"",
     "dev": "lerna run dev --no-private --stream",
-    "test": "lerna run test --no-private --stream",
-    "test:ci": "lerna run test:ci --no-private --stream  --ignore @react-atomic-ui/site",
-    "test:cov": "lerna run test:cov --ignore @react-atomic-ui/site"
+    "test": "yarn workspaces run test",
+    "test:ci": "yarn workspaces run test:ci",
+    "test:cov": "yarn workspaces run test:cov"
   },
   "devDependencies": {
     "@babel/cli": "7.12.17",
