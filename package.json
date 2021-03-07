@@ -66,6 +66,9 @@
   },
   "workspaces": {
     "packages": [
+      "packages/theme",
+      "packages/utils",
+      "packages/core",
       "packages/*",
       "site"
     ]
