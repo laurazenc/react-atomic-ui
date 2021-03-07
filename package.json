@@ -20,7 +20,7 @@
     "theme:clean": "yarn theme clean",
     "site": "yarn workspace @react-atomic-ui/site",
     "site:dev": "yarn site dev",
-    "build": "lerna run build --ignore @react-atomic-ui/template --no-private --stream",
+    "build": "yarn workspaces run build",
     "clean": "lerna run clean",
     "lint": "lerna run lint --no-private --stream",
     "lint:types": "lerna exec --parallel \"tsc --noEmit\"",
