@@ -19,7 +19,7 @@ jobs:
           node-version: 12
 
       - name: Load Yarn cache
-        uses: actions/cache@70655ec
+        uses: actions/cache@v2
         with:
           path: ${{ steps.yarn-cache.outputs.dir }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
@@ -27,7 +27,7 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Install dependencies
-        run: yarn install && yarn bootstrap
+        run: yarn install
 
       - name: Build packages
         run: yarn build
