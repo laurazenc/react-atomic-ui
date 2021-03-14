@@ -1,1 +1,3 @@
-export const raui = null
+import styled from "@emotion/styled"
+
+export const raui = styled
