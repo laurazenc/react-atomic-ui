@@ -45,6 +45,7 @@
     "react": "16.x"
   },
   "dependencies": {
-    "@emotion/react": "^11.1.5"
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5"
   }
 }
