@@ -1,3 +1,3 @@
 export * from "./Provider"
 export * from "./useTheme"
-export { Global, css } from "@emotion/react"
+export { Global } from "@emotion/react"

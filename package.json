@@ -88,16 +88,17 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "commit-msg": "commitlint --edit $1"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
-    "*.(ts|tsx)": [
-      "eslint --fix",
-      "prettier --write --ignore-path .eslintignore"
-    ],
-    "*.md": [
-      "prettier --write --ignore-path .eslintignore"
+    "packages/**/*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
     ]
   }
 }
