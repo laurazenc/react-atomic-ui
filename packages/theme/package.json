@@ -12,6 +12,15 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/esm/index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/laurazenc/react-atomic-ui.git"
@@ -20,13 +29,13 @@
     "prebuild": "rimraf dist",
     "dev": "nodemon --watch src --exec yarn build -e ts,tsx",
     "build": "concurrently yarn:build:*",
-    "build:esm": "tsc --module es6 --target es5 --outDir dist/esm",
-    "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --root-mode upward --extensions .ts,.tsx -d dist/esm --source-maps",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --root-mode upward --extensions .ts,.tsx -d dist/cjs --source-maps",
     "build:types": "tsc --emitDeclarationOnly --declaration --declarationDir dist/types",
     "clean": "rimraf coverage",
-    "test": "jest --passWithNoTests --env=jsdom",
-    "test:ci": "yarn test --watchAll --coverage",
-    "test:cov": "yarn clean && yarn test --coverage --ci --runInBand",
+    "test": "jest --env=jsdom --passWithNoTests",
+    "test:ci": "yarn clean && yarn test --watchAll --coverage",
+    "test:cov": "yarn test --coverage",
     "lint": "eslint src --ext .ts,.tsx --config ../../.eslintrc"
   },
   "bugs": {

@@ -1,6 +1,5 @@
 import React from "react"
 import { Dict } from "@react-atomic-ui/utils"
-import defaultTheme from "@react-atomic-ui/theme"
 
 interface RauiProviderProps {
   theme?: Dict
@@ -17,7 +16,7 @@ export const ThemeProvider: React.FunctionComponent<ThemeProviderProps> = (
   props,
 ) => {
   const { children, theme } = props
-  const mergedTheme = Object.assign({}, defaultTheme, theme)
+  const mergedTheme = Object.assign({}, {}, theme)
   return (
     <ThemeContext.Provider value={mergedTheme}>
       {children}
@@ -27,7 +26,7 @@ export const ThemeProvider: React.FunctionComponent<ThemeProviderProps> = (
 
 export const RauiProvider = ({
   children,
-  theme = defaultTheme,
+  theme = {},
 }: RauiProviderProps): React.ReactElement => {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
