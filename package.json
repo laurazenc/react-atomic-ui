@@ -92,7 +92,7 @@
     }
   },
   "lint-staged": {
-    "*.ts?x": [
+    "*.(ts|tsx)": [
       "eslint --fix",
       "prettier --write --ignore-path .eslintignore"
     ],
