@@ -43,5 +43,8 @@
   },
   "peerDependencies": {
     "react": "16.x"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.1.5"
   }
 }
