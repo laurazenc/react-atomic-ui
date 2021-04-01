@@ -1,4 +1,5 @@
 import React from "react"
+import { Box } from "@react-atomic-ui/components"
 
 interface PageProps {
   frontmatter: { [key: string]: unknown }
@@ -16,7 +17,9 @@ const Page: React.FC<PageProps> = ({
   const { title } = frontmatter
   return (
     <>
-      <div>the header</div>
+      <Box justifyContent="center" alignItems="center" height="60px">
+        the header
+      </Box>
       <div style={{ display: "flex" }}>
         {sidebar || null}
         <div style={{ flex: 1 }}>
