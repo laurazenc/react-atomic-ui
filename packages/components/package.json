@@ -1,5 +1,5 @@
 {
-  "name": "@react-atomic-ui/utils",
+  "name": "@react-atomic-ui/components",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "Laura <laurazenc@gmail.com>",
@@ -34,5 +34,9 @@
   },
   "peerDependencies": {
     "react": "17.x"
+  },
+  "dependencies": {
+    "@react-atomic-ui/theme": "*",
+    "@emotion/react": "^11.1.5"
   }
 }

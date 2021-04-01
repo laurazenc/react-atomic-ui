@@ -17,10 +17,14 @@ module.exports = function (api) {
       },
     ],
     "@babel/preset-typescript",
-    "@babel/preset-react",
+    ["@babel/preset-react",       
+    { "runtime": "automatic", "importSource": "@emotion/react" }
+    ],
+    "@emotion/babel-preset-css-prop"
   ]
 
   const plugins = [
+    "@emotion/babel-plugin",
     "@babel/plugin-proposal-class-properties",
   ]
 
